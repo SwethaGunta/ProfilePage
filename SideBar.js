@@ -136,6 +136,7 @@ render(){
             margin: 15,
             flex: 1,
             flexDirection: 'row',
+            alignItems: 'flex-start',
             justifyContent: 'space-around',       
          }}>
          <Ionicons name = "ios-moon-outline" size = {28} />      

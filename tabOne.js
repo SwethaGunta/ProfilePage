@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {Content, Container, Button, Thumbnail, Header, ListItem} from 'native-base';
+import {Content, Container, Button, Thumbnail,Icon, Header, ListItem,Spinner, Fab , Footer, FooterTab} from 'native-base';
 import {View, Picker, StyleSheet, Text, Dimensions, Image} from 'react-native';
 import  SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import EvilIcons from 'react-native-vector-icons/EvilIcons';
 
 export default class TabOne extends Component {
     static navigationOptions = {tabBarLabel: 'Home'}
@@ -10,7 +11,9 @@ export default class TabOne extends Component {
         //let screen_width = Dimensions.get('window').width;
         // let screen_height = Dimensions.get('window').height;
         return(
+            <Container>
             <Content>
+               
             <View style={{
                 // width: screen_width,
                 // height: screen_height,
@@ -26,7 +29,7 @@ export default class TabOne extends Component {
             <View style={{
                 flex: 0.20,
                  // take 20% in the 60%
-                 marginLeft: 20
+                 marginLeft: 15
             }}>
             <Thumbnail size={50} source = {{uri: 'https://cdn.pixabay.com/photo/2017/07/18/15/37/idea-2516126_960_720.png'}} />
             </View>
@@ -39,7 +42,8 @@ export default class TabOne extends Component {
             <View style={[styles.full, styles.row_dir]}>
             <View style={{flex: 0.90, justifyContent:'flex-start'}}>
             <Text style={styles.mainname}>Smarter Every Day <Text style={styles.subname}>@smart... 30m</Text></Text>
-            <Text style={styles.text}>What can you do and where are you from? <Text style={styles.link}> ift.tt/365hfcbdQLd </Text></Text>  
+            <Text style={styles.text}>What can you do and where are you from? <Text style={styles.link}> ift.tt/365hfcbdQLd</Text></Text>  
+            <Spinner color= 'blue'/>
             </View>
             <View style= {{flex: 0.10}}>
             <Picker><Picker.Item label=" "/></Picker>         
@@ -47,6 +51,7 @@ export default class TabOne extends Component {
             </View>
             </View> 
             {/* closed flex: 0.30 */}
+            
             <View style={{flex: 0.60, marginTop: 5, marginBottom: 5}}>
               <Image  style={{
                 width: 300,
@@ -77,11 +82,11 @@ export default class TabOne extends Component {
             {/* second thumbmsg */}
             
             <View style= {[styles.full, styles.row_dir]}>
-            {/* Considering 60% of screen as full */}
+            {/* Considering 40% of screen as full */}
             <View style={{
                 flex: 0.20,
-                 // take 20% in the 60%
-                marginLeft: 20
+                 // take 20% in the 40%
+                marginLeft: 15
            }}>
             <Thumbnail size={50} source = {{uri: 'https://upload.wikimedia.org/wikipedia/commons/a/a2/Jack-o%27-Lantern_2003-10-31.jpg'}} />
             </View>
@@ -128,10 +133,18 @@ export default class TabOne extends Component {
 
             {/* end of mesg */}
             
-            
             </View>
             </View>  
-            </Content>             
+            </Content>  
+            <Footer>
+                <FooterTab>
+                    <Button><Text>All</Text></Button>
+                    <Button><Text>Mentions</Text></Button>
+                    <Button><Text></Text></Button>
+                    <Button><EvilIcons name = "gear" /></Button>
+                    </FooterTab>
+                </Footer>         
+            </Container>
         );
     }
 }

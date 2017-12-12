@@ -1,21 +1,26 @@
-Get Started
+Steps to getting started with react-native, native base and react-navigation
 
-1. Installation
+(1) Please refer to "https://facebook.github.io/react-native/docs/getting-started.html" for installing dependencies and setting up the Android environment
 
-On the command prompt run the following commands
+(2) Please refer to https://docs.nativebase.io/docs/GetStarted.html for setting up the environment. 
 
-$ git clone git@github.com:SwethaGunta/ProfilePage.git
 
-$ cd ProfilePage/
+Steps to getting started with the repository using gitBash 
 
-$ npm install
+(1) $cd <your workspace>
+(2) $git clone <URL> (Press Enter)
+(3) $cd <project directory> (Press Enter) {Eg: cd ProfilePage}
+(4) $npm install
+(5) $react-native link
+(6) $react-native run-android
 
-$ react-native link
+NOTE: Please make sure your android emulator is running
 
- Simulate for Android
+Steps to run the Android Emulator from cmd
+(1) cd <ANDROID_SDK_HOME> {Eg: C:/Users/User-name/AppData/Local/Android/Sdk/tools}
 
-Make sure you have an Android emulator installed and running.
+(2)To list the virtua devices do $emulator -list -avds
 
-Run the following command in your terminal.
+(3)emulator -avd <avd-name> (to open a virtual device)
 
-$ react-native run-android
+DEMO

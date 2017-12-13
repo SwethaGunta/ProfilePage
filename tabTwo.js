@@ -3,17 +3,18 @@ import {Content,Container, Header, Button, Item, Input,Footer,FooterTab, Icon} f
 import {Text, View, Dimensions, TouchableOpacity} from 'react-native';
 import  {StackNavigator} from 'react-navigation';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
+import Timeline from './timeline';
 
 export default class TabTwo extends Component {
    static navigationOptions={
-    headerLeft: (<TouchableOpacity onPress={()=>navigation.goBack()}><Icon name="arrow-back"/></TouchableOpacity>), 
-    header: (
+    header: ({navigation}) => (
        <View>
       <Item style={{
         borderColor: '#000080',
         borderWidth: 2
       }}>
-        <Input placeholder= "Search" />    
+      <TouchableOpacity onPress={()=>{ navigation.goBack() }}><Icon name="arrow-back"/></TouchableOpacity>
+        <Input placeholder= "Search" style={{width: 300}}/>    
         <Icon name= "microphone" />
       </Item>  
        </View>
@@ -22,24 +23,13 @@ export default class TabTwo extends Component {
     render(){
         return(
           <Container>
-            {/* <Header searchBar rounded style={{
-        backgroundColor: 'grey'
-        }}>
-      <Item style={{
-        borderColor: '#000080',
-        borderWidth: 2
-      }}>
-        <Input placeholder= "Search" />    
-        <Icon name= "microphone" />
-      </Item>   
-          </Header> */}
           <Content/>
-          <Footer>
+          <Footer style={{backgroundColor: '#ffffff'}}>
                 <FooterTab>
                     <Button><Text>All</Text></Button>
                     <Button><Text>Mentions</Text></Button>
                     <Button><Text></Text></Button>
-                    <Button><EvilIcons name= "gear" /></Button>
+                    <Button><EvilIcons name= "gear" size= {14}/></Button>
                     </FooterTab>
                 </Footer> 
           </Container>

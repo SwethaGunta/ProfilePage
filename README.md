@@ -22,5 +22,3 @@ Steps to run the Android Emulator from cmd
 (2)To list the virtua devices do $emulator -list -avds
 
 (3)emulator -avd <avd-name> (to open a virtual device)
-
-DEMO

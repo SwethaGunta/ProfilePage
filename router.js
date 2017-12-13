@@ -6,7 +6,10 @@ import TabTwo from './tabTwo';
 
 export const StackScreens = StackNavigator({
   timeline: { screen: Timeline},
-  TabTwo: { screen: TabTwo },
+  TabTwo: { screen: TabTwo,
+  navigationOptions: ({navigation})=>{
+      header: <TabTwo navigation={navigation}/>
+  } },
 },
 {
   initialRouteName: 'timeline'
